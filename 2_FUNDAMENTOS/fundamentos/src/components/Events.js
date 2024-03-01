@@ -5,6 +5,14 @@ const Events = () => {
         console.log("Ativando Evendo com click");
         //console.clear();
     }
+
+    const renderSomenthing = (x) =>{
+        if(x){
+            return <h1>Renderizando depois do if</h1>
+        }else{
+            return <h1>Renderizando depois do else</h1>
+        }
+    }
     
     return (
         <div>
@@ -20,6 +28,10 @@ const Events = () => {
                         console.log("Não é uma boa pratica");
                 }
                 }>Não é uma boa pratica</button>
+            </div>
+            <div>
+                {renderSomenthing(true)}
+                {renderSomenthing(false)}
             </div>
         </div>
     );
