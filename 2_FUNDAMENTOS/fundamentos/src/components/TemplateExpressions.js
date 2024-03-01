@@ -1,3 +1,4 @@
+import Events from "./Events";
 import MyComponent from "./MyComponent";
 
 const TemplateExpressions = () => {
@@ -14,6 +15,8 @@ const TemplateExpressions = () => {
             <p>Você atua como {data.job}</p>
 
             <MyComponent></MyComponent>
+
+            <Events></Events>
         </div>
     );
 }
