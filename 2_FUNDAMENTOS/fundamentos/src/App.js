@@ -4,6 +4,7 @@ import TemplateExpressions from './components/TemplateExpressions';
 
 //
 import './App.css';
+import Challenge from './components/Challenge';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <h1>Fundamentos React</h1>
       <FirstComponet/>
       <TemplateExpressions />
+      <Challenge></Challenge>
     </div>
   );
 }
