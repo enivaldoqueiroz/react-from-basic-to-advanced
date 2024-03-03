@@ -1,12 +1,11 @@
-import { useState } from 'react';
-import './App.css';
-import City  from './assets/city.jpg';
-import ConditionalRender from './components/ConditionalRender';
-import ListRender from './components/ListRender';
-import ManageData from './components/ManageData';
-import ShowUserName from './components/ShowUserName';
-import CarDetails from './components/CarDetails';
-
+import { useState } from "react";
+import "./App.css";
+import City from "./assets/city.jpg";
+import ConditionalRender from "./components/ConditionalRender";
+import ListRender from "./components/ListRender";
+import ManageData from "./components/ManageData";
+import ShowUserName from "./components/ShowUserName";
+import CarDetails from "./components/CarDetails";
 
 function App() {
   const name = "Joaquim";
@@ -16,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <h1>Avançando em React</h1>
-        {/* Imagem em public */}
+      {/* Imagem em public */}
       {/* <div>
         <img src="/img1.jpg" alt="Paisagem" />
       </div> */}
@@ -25,16 +24,19 @@ function App() {
       {/* <div>
         <img src={City} alt="Cidade" />
       </div> */}
-      {/* <ManageData></ManageData>
 
-      <ListRender></ListRender>
+      <ManageData></ManageData>
 
-      <ConditionalRender></ConditionalRender> 
-      
-      <ShowUserName name={userName} age={userAge}></ShowUserName>
-      */}
+      <ListRender />
 
-      <CarDetails brand="VW" km={100000} color="Azul"/>
+      <ConditionalRender />
+      {/* props */}
+      <ShowUserName name={userName} age={userAge} />
+      {/* desctruturing props */}
+      <CarDetails brand="VW" km={100000} color="Azul" newCar={false} />
+      {/* reaproveitando componentes */}
+      <CarDetails brand={"Ford"} km={2000} color={"Prata"} newCar={true} />
+      <CarDetails brand={"Fiat"} km={6000} color={"Branco"} newCar={false} />
     </div>
   );
 }
