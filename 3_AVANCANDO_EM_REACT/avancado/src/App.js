@@ -9,6 +9,8 @@ import CarDetails from "./components/CarDetails";
 import Fragment from "./components/Fragment";
 import Container from "./components/Container";
 import ExecuteFunction from "./components/ExecuteFunction";
+import Message from "./components/Message";
+import ChangeMessageState from "./components/ChangeMessageState";
 
 function App() {
   //const name = "Joaquim";
@@ -21,9 +23,15 @@ function App() {
     { id: 1, brand: "Renault", color: "Azul", newCar: false, km: 1000 },
   ];
 
-  function showMessage(){
+  function showMessage() {
     console.log("Evento do componente pai");
   }
+
+  const [message, setMessage] = useState("");
+
+  const handleMessage = (msg) => {
+    setMessage(msg);
+  };
 
   return (
     <div className="App">
@@ -54,16 +62,17 @@ function App() {
       {/* Loop  em Array de objetos*/}
       <p>==========================================</p>
       {cars.map((car) => (
-        <CarDetails 
+        <CarDetails
           key={car.id}
-          brand={car.brand} 
-          color={car.color} 
-          newCar={car.newCar} />
+          brand={car.brand}
+          color={car.color}
+          newCar={car.newCar}
+        />
       ))}
 
       {/* Fragment no React */}
       <p>==========================================</p>
-      <Fragment nomeTerceiroTitulo="Título via props desconstruida"/>
+      <Fragment nomeTerceiroTitulo="Título via props desconstruida" />
       <p>==========================================</p>
 
       {/* Children */}
@@ -79,6 +88,10 @@ function App() {
       <p>==========================================</p>
       {/* 48. Função como prop - Executar função*/}
       <ExecuteFunction myFunction={showMessage} />
+      <p>==========================================</p>
+      {/* 49. State lift */}
+      <Message msg={message} />
+      <ChangeMessageState handleMessage={handleMessage} />
     </div>
   );
 }
