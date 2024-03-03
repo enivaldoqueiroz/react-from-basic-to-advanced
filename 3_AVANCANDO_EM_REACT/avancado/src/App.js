@@ -10,6 +10,8 @@ import ShowUserName from './components/ShowUserName';
 function App() {
   const name = "Joaquim";
   const [userName, setName] = useState("Maria");
+  const [userAge, setAge] = useState(25);
+
   return (
     <div className="App">
       <h1>Avançando em React</h1>
@@ -28,7 +30,7 @@ function App() {
 
       <ConditionalRender></ConditionalRender> */}
 
-      <ShowUserName name={userName}></ShowUserName>
+      <ShowUserName name={userName} age={userAge}></ShowUserName>
     </div>
   );
 }
