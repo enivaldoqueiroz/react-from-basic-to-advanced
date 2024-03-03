@@ -1,14 +1,15 @@
 import { useState } from "react";
 import "./App.css";
-import City from "./assets/city.jpg";
+//import City from "./assets/city.jpg";
 import ConditionalRender from "./components/ConditionalRender";
 import ListRender from "./components/ListRender";
 import ManageData from "./components/ManageData";
 import ShowUserName from "./components/ShowUserName";
 import CarDetails from "./components/CarDetails";
+import Fragment from "./components/Fragment";
 
 function App() {
-  const name = "Joaquim";
+  //const name = "Joaquim";
   const [userName, setName] = useState("Maria");
   const [userAge, setAge] = useState(25);
 
@@ -49,6 +50,10 @@ function App() {
       {cars.map((car) => (
         <CarDetails brand={car.brand} color={car.color} newCar={car.newCar} />
       ))}
+
+      {/* Fragment no React */}
+      <p>==========================================</p>
+      <Fragment nomeTerceiroTitulo="Título via props desconstruida"/>
     </div>
   );
 }
