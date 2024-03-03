@@ -12,6 +12,12 @@ function App() {
   const [userName, setName] = useState("Maria");
   const [userAge, setAge] = useState(25);
 
+  const cars = [
+    { id: 1, brand: "Ferrari", color: "Vermelho Ferrari", newCar: true, km: 0 },
+    { id: 2, brand: "KIA", color: "Branco", newCar: false, km: 35000 },
+    { id: 1, brand: "Renault", color: "Azul", newCar: false, km: 1000 },
+  ];
+
   return (
     <div className="App">
       <h1>Avançando em React</h1>
@@ -37,6 +43,12 @@ function App() {
       {/* reaproveitando componentes */}
       <CarDetails brand={"Ford"} km={2000} color={"Prata"} newCar={true} />
       <CarDetails brand={"Fiat"} km={6000} color={"Branco"} newCar={false} />
+
+      {/* Loop  em Array de objetos*/}
+      <p>==========================================</p>
+      {cars.map((car) => (
+        <CarDetails brand={car.brand} color={car.color} newCar={car.newCar} />
+      ))}
     </div>
   );
 }
