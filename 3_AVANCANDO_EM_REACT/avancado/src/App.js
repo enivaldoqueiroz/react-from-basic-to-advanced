@@ -1,28 +1,34 @@
+import { useState } from 'react';
 import './App.css';
 import City  from './assets/city.jpg';
 import ConditionalRender from './components/ConditionalRender';
 import ListRender from './components/ListRender';
 import ManageData from './components/ManageData';
+import ShowUserName from './components/ShowUserName';
 
 
 function App() {
+  const name = "Joaquim";
+  const [userName, setName] = useState("Maria");
   return (
     <div className="App">
       <h1>Avançando em React</h1>
         {/* Imagem em public */}
-      <div>
+      {/* <div>
         <img src="/img1.jpg" alt="Paisagem" />
-      </div>
+      </div> */}
 
       {/* Imagem em asset */}
-      <div>
+      {/* <div>
         <img src={City} alt="Cidade" />
-      </div>
-      <ManageData></ManageData>
+      </div> */}
+      {/* <ManageData></ManageData>
 
       <ListRender></ListRender>
 
-      <ConditionalRender></ConditionalRender>
+      <ConditionalRender></ConditionalRender> */}
+
+      <ShowUserName name={userName}></ShowUserName>
     </div>
   );
 }
