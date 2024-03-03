@@ -7,6 +7,7 @@ import ManageData from "./components/ManageData";
 import ShowUserName from "./components/ShowUserName";
 import CarDetails from "./components/CarDetails";
 import Fragment from "./components/Fragment";
+import Container from "./components/Container";
 
 function App() {
   //const name = "Joaquim";
@@ -54,6 +55,17 @@ function App() {
       {/* Fragment no React */}
       <p>==========================================</p>
       <Fragment nomeTerceiroTitulo="Título via props desconstruida"/>
+      <p>==========================================</p>
+
+      {/* Children */}
+      <Container myValue="PassandoValorNaProp">
+        <p>Testando um novo children</p>
+        <p>E este é o conteúdo</p>
+      </Container>
+
+      <Container myValue="PassandoValorNaProp 2">
+        <h3>Testando Conteiner</h3>
+      </Container>
     </div>
   );
 }
