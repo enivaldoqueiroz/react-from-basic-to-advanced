@@ -8,6 +8,7 @@ import ShowUserName from "./components/ShowUserName";
 import CarDetails from "./components/CarDetails";
 import Fragment from "./components/Fragment";
 import Container from "./components/Container";
+import ExecuteFunction from "./components/ExecuteFunction";
 
 function App() {
   //const name = "Joaquim";
@@ -19,6 +20,10 @@ function App() {
     { id: 2, brand: "KIA", color: "Branco", newCar: false, km: 35000 },
     { id: 1, brand: "Renault", color: "Azul", newCar: false, km: 1000 },
   ];
+
+  function showMessage(){
+    console.log("Evento do componente pai");
+  }
 
   return (
     <div className="App">
@@ -35,7 +40,7 @@ function App() {
 
       <ManageData></ManageData>
 
-      <ListRender />
+      {/* <ListRender /> */}
 
       <ConditionalRender />
       {/* props */}
@@ -49,7 +54,11 @@ function App() {
       {/* Loop  em Array de objetos*/}
       <p>==========================================</p>
       {cars.map((car) => (
-        <CarDetails brand={car.brand} color={car.color} newCar={car.newCar} />
+        <CarDetails 
+          key={car.id}
+          brand={car.brand} 
+          color={car.color} 
+          newCar={car.newCar} />
       ))}
 
       {/* Fragment no React */}
@@ -59,13 +68,17 @@ function App() {
 
       {/* Children */}
       <Container myValue="PassandoValorNaProp">
-        <p>Testando um novo children</p>
+        <p>Testando um novo childrenTag</p>
         <p>E este é o conteúdo</p>
       </Container>
 
       <Container myValue="PassandoValorNaProp 2">
         <h3>Testando Conteiner</h3>
       </Container>
+
+      <p>==========================================</p>
+      {/* 48. Função como prop - Executar função*/}
+      <ExecuteFunction myFunction={showMessage} />
     </div>
   );
 }
