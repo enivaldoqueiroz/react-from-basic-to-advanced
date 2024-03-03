@@ -11,6 +11,7 @@ import Container from "./components/Container";
 import ExecuteFunction from "./components/ExecuteFunction";
 import Message from "./components/Message";
 import ChangeMessageState from "./components/ChangeMessageState";
+import UserDetails from "./components/UserDetails";
 
 function App() {
   //const name = "Joaquim";
@@ -20,8 +21,14 @@ function App() {
   const cars = [
     { id: 1, brand: "Ferrari", color: "Vermelho Ferrari", newCar: true, km: 0 },
     { id: 2, brand: "KIA", color: "Branco", newCar: false, km: 35000 },
-    { id: 1, brand: "Renault", color: "Azul", newCar: false, km: 1000 },
+    { id: 3, brand: "Renault", color: "Azul", newCar: false, km: 1000 },
   ];
+
+  const pessoas = [
+    {id: 1, nomePessoa: "Jose", idade: 20, profissao:"Dev"},
+    {id: 2, nomePessoa: "Pedro", idade: 17, profissao:"DBA"},
+    {id: 3, nomePessoa: "Carlos", idade: 40, profissao:"DevOps"}
+  ]
 
   function showMessage() {
     console.log("Evento do componente pai");
@@ -92,6 +99,17 @@ function App() {
       {/* 49. State lift */}
       <Message msg={message} />
       <ChangeMessageState handleMessage={handleMessage} />
+
+      <p>==========================================</p>
+      {/* Tarefa 4: Desafio sobre componentes e recursos do React*/}
+      {pessoas.map((pessoa) => (
+        <UserDetails 
+          key={pessoa.id}
+          nome={pessoa.nomePessoa}
+          idade={pessoa.idade}
+          profissao={pessoa.profissao}
+        />
+      ))}
     </div>
   );
 }
