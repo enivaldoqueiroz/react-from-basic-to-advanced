@@ -5,6 +5,7 @@ import MyComponent from "./component/MyComponent";
 function App() {
   const n = 15;
   const [name] = useState('Enivaldo')
+  const redTitle = false;
   return (
     <div className="App">
       {/* 52. CSS global */}
@@ -37,6 +38,9 @@ function App() {
         { color: "purple", backgroundColor: "yellow" } : null}>
         Enivaldo Queiroz
       </h2>
+
+      {/* 56. Classes dinâmicas */}
+      <h2 className={redTitle ? "red-title":"title"}>Este título vai ter classe dinâmica</h2>
     </div>
   );
 }
