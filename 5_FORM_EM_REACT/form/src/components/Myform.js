@@ -31,6 +31,7 @@ const Myform = () => {
         {/* 2 - Label envolvendo input */}
         <label>
           <span>E-mail</span>
+          {/* 4 - Simplificação de  manipulação de state*/}
           <input 
             type="email" 
             name="email" 
