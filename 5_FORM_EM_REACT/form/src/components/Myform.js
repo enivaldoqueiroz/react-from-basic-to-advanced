@@ -10,14 +10,20 @@ const Myform = () => {
   const handleName = (e) => {
     setName(e.target.value);
   }
-  console.log(name);
-  console.log(email);
+  // console.log(name);
+  // console.log(email);
 
+  const handleSubmit = (event) =>{
+    event.preventDefault();
+    console.log("Enviando o formulario");
+    console.log(name, email);
+  }
 
   return (
     <div>
       {/* 60. Criando formulários */}
-      <form>
+      {/* 5 - envio de form */}
+      <form onSubmit={handleSubmit}>
         {/* 1 - Criação de form */}
         <div>
           <label htmlFor="name">Nome:</label>
