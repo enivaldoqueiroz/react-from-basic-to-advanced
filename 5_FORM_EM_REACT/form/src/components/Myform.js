@@ -1,7 +1,17 @@
 import React from "react";
 import "./MyForm.css";
+import { useState } from "react"
 
 const Myform = () => {
+  // 3 - Gerenciamento de dados
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+
+  const handleName = (e) => {
+    setName(e.target.value);
+  }
+  console.log(name);
+
   return (
     <div>
       {/* 60. Criando formulários */}
@@ -9,7 +19,12 @@ const Myform = () => {
         {/* 1 - Criação de form */}
         <div>
           <label htmlFor="name">Nome:</label>
-          <input type="text" name="name" placeholder="Digite seu nome" />
+          <input 
+            type="text" 
+            name="name" 
+            placeholder="Digite seu nome" 
+            onChange={handleName}
+          />
         </div>
         {/* 2 - Label envolvendo input */}
         <label>
